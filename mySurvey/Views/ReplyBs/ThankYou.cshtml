@@ -1,0 +1,62 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>ThankYou</title>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+
+                <div class="col-md-4">
+                    <div>
+                        <div class="aligenment" style="background-color: lightblue;border-radius:10px; padding: 5%; text-align: center;">
+                            <h1>1000 tak for din deltagelse</h1>
+                            <p>Med venlig hilsen Michael</p>
+                            <button onclick="goBack()" style="padding:1%;width:100px;font-size:larger;">Luk</button>
+                            <div>
+                                <p>En stor tak til <strong>shop-kreativ.dk</strong> for lån af hjemmerside</p>
+                            </div>
+                        </div>
+                    </div>
+                    <br />
+               
+                </div>
+                <div class="col-md-4">
+                </div>
+            </div>
+
+
+
+        </div>
+    </div>
+</body>
+</html>
+
+<style>
+    .aligenment {
+        margin: auto;
+        width: 50%;
+        border: 3px solid green;
+        padding: 10px;
+        margin-top:10%;
+    }
+
+    .center {
+        width: 100%;
+    }
+</style>
+
+
+<script>
+    function goBack() {
+        window.history.go(-2);
+    }
+</script>

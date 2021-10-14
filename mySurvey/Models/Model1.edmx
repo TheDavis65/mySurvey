@@ -1,0 +1,120 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="MySurveyModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Questions">
+          <Key>
+            <PropertyRef Name="QuestionsID" />
+          </Key>
+          <Property Name="QuestionsID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Question" Type="nvarchar" MaxLength="150" />
+        </EntityType>
+        <EntityType Name="ReplyB">
+          <Key>
+            <PropertyRef Name="ReplyBID" />
+          </Key>
+          <Property Name="ReplyBID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ReplyB_1" Type="bit" />
+          <Property Name="ReplyB_2" Type="bit" />
+          <Property Name="ReplyB_3" Type="bit" />
+          <Property Name="ReplyB_4" Type="bit" />
+          <Property Name="ReplyB_5" Type="bit" />
+          <Property Name="ReplyB_6" Type="bit" />
+          <Property Name="ReplyB_7" Type="bit" />
+          <Property Name="ReplyB_8" Type="bit" />
+          <Property Name="ReplyB_9" Type="bit" />
+          <Property Name="ReplyB_10" Type="bit" />
+        </EntityType>
+        <EntityContainer Name="MySurveyModelStoreContainer">
+          <EntitySet Name="Questions" EntityType="Self.Questions" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ReplyB" EntityType="Self.ReplyB" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="MySurveyModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="MySurveyEntities2" annotation:LazyLoadingEnabled="true" >
+          <EntitySet Name="Questions" EntityType="MySurveyModel.Questions" />
+          <EntitySet Name="ReplyB" EntityType="MySurveyModel.ReplyB" />
+        </EntityContainer>
+        <EntityType Name="Questions">
+          <Key>
+            <PropertyRef Name="QuestionsID" />
+          </Key>
+          <Property Name="QuestionsID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Question" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="ReplyB">
+          <Key>
+            <PropertyRef Name="ReplyBID" />
+          </Key>
+          <Property Name="ReplyBID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ReplyB_1" Type="Boolean" />
+          <Property Name="ReplyB_2" Type="Boolean" />
+          <Property Name="ReplyB_3" Type="Boolean" />
+          <Property Name="ReplyB_4" Type="Boolean" />
+          <Property Name="ReplyB_5" Type="Boolean" />
+          <Property Name="ReplyB_6" Type="Boolean" />
+          <Property Name="ReplyB_7" Type="Boolean" />
+          <Property Name="ReplyB_8" Type="Boolean" />
+          <Property Name="ReplyB_9" Type="Boolean" />
+          <Property Name="ReplyB_10" Type="Boolean" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="MySurveyModelStoreContainer" CdmEntityContainer="MySurveyEntities2" >
+          <EntitySetMapping Name="Questions">
+            <EntityTypeMapping TypeName="MySurveyModel.Questions">
+              <MappingFragment StoreEntitySet="Questions">
+                <ScalarProperty Name="Question" ColumnName="Question" />
+                <ScalarProperty Name="QuestionsID" ColumnName="QuestionsID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ReplyB">
+            <EntityTypeMapping TypeName="MySurveyModel.ReplyB">
+              <MappingFragment StoreEntitySet="ReplyB">
+                <ScalarProperty Name="ReplyB_10" ColumnName="ReplyB_10" />
+                <ScalarProperty Name="ReplyB_9" ColumnName="ReplyB_9" />
+                <ScalarProperty Name="ReplyB_8" ColumnName="ReplyB_8" />
+                <ScalarProperty Name="ReplyB_7" ColumnName="ReplyB_7" />
+                <ScalarProperty Name="ReplyB_6" ColumnName="ReplyB_6" />
+                <ScalarProperty Name="ReplyB_5" ColumnName="ReplyB_5" />
+                <ScalarProperty Name="ReplyB_4" ColumnName="ReplyB_4" />
+                <ScalarProperty Name="ReplyB_3" ColumnName="ReplyB_3" />
+                <ScalarProperty Name="ReplyB_2" ColumnName="ReplyB_2" />
+                <ScalarProperty Name="ReplyB_1" ColumnName="ReplyB_1" />
+                <ScalarProperty Name="ReplyBID" ColumnName="ReplyBID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

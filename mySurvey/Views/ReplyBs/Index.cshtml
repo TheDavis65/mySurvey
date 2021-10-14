@@ -1,0 +1,87 @@
+﻿@model IEnumerable<mySurvey.Models.ReplyB>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.ReplyB_1)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ReplyB_2)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ReplyB_3)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ReplyB_4)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ReplyB_5)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ReplyB_6)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ReplyB_7)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ReplyB_8)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ReplyB_9)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ReplyB_10)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.ReplyB_1)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ReplyB_2)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ReplyB_3)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ReplyB_4)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ReplyB_5)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ReplyB_6)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ReplyB_7)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ReplyB_8)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ReplyB_9)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ReplyB_10)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.ReplyBID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.ReplyBID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ReplyBID })
+        </td>
+    </tr>
+}
+
+</table>

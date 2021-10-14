@@ -1,0 +1,339 @@
+﻿@model mySurvey.Models.ReplyB
+@using mySurvey.Models
+
+
+
+
+
+@*@{
+        ViewBag.Title = "Create";
+    }*@
+
+@*dette script gør at siden kun kan besøges 1 gang*@
+@*<script>
+    if (localStorage.getItem("visited")) {
+        window.location.href = "YouHaveReplyed";
+    }
+    localStorage.setItem("visited", "true");
+</script>*@
+<h2>Spørgeskema</h2>
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+<div class="form-horizontal">
+    <h4>Er der en betenglighed i forhold til os som mennesker og informations teknologi?</h4>
+    <hr />
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    <div class="form-group">
+        @*@Html.LabelFor(model => model.ReplyB_1, htmlAttributes: new { @class = "control-label col-md-2" })*@
+        <div class="control-label col-md-2">
+            @{
+                MySurveyEntities2 db = new MySurveyEntities2();
+                var Question1 = db.Questions.Where(x => x.QuestionsID == 1);
+
+                string q1 = "";
+
+                if (Question1 != null)
+                {
+                    foreach (var item in Question1)
+                    {
+                        q1 = Convert.ToString(item.Question);
+                        <p>@q1</p>
+                    }
+                }
+            }
+        </div>
+        <div class="survey">
+            <div>
+                <p class="radioAligenment">JA</p> <p class="radioAligenment">NEJ</p>
+                <br />
+                @Html.RadioButtonFor(model => model.ReplyB_1, true) <p style="display:inline;padding-right:25px;"></p> @Html.RadioButtonFor(model => model.ReplyB_1, false)
+
+                @Html.ValidationMessageFor(model => model.ReplyB_1, "", new { @class = "text-danger" })
+            </div>
+        </div>
+    </div>
+    <hr />
+    <div class="form-group">
+        <div class="control-label col-md-2">
+            @{
+                var Question2 = db.Questions.Where(x => x.QuestionsID == 2);
+
+                string q2 = "";
+
+                if (Question2 != null)
+                {
+                    foreach (var item in Question2)
+                    {
+                        q2 = Convert.ToString(item.Question);
+                        <p>@q2</p>
+                    }
+                }
+            }
+        </div>
+        <div class="survey">
+            <div>
+                <p class="radioAligenment">JA</p> <p class="radioAligenment">NEJ</p>
+                <br />
+                @Html.RadioButtonFor(model => model.ReplyB_2, true) <p style="display:inline;padding-right:25px;"></p>  @Html.RadioButtonFor(model => model.ReplyB_2, false)
+
+                @Html.ValidationMessageFor(model => model.ReplyB_2, "", new { @class = "text-danger" })
+            </div>
+        </div>
+    </div>
+    <hr />
+    <div class="form-group">
+        <div class="control-label col-md-2">
+            @{
+                var Question3 = db.Questions.Where(x => x.QuestionsID == 3);
+
+                string q3 = "";
+
+                if (Question3 != null)
+                {
+                    foreach (var item in Question3)
+                    {
+                        q3 = Convert.ToString(item.Question);
+                        <p>@q3</p>
+                    }
+                }
+            }
+        </div>
+        <div class="survey">
+            <div>
+                <p class="radioAligenment">JA</p> <p class="radioAligenment">NEJ</p>
+                <br />
+                @Html.RadioButtonFor(model => model.ReplyB_3, true) <p style="display:inline;padding-right:25px;"></p>  @Html.RadioButtonFor(model => model.ReplyB_3, false)
+
+                @Html.ValidationMessageFor(model => model.ReplyB_3, "", new { @class = "text-danger" })
+            </div>
+        </div>
+    </div>
+    <hr />
+    <div class="form-group">
+        <div class="control-label col-md-2">
+            @{
+                var Question4 = db.Questions.Where(x => x.QuestionsID == 4);
+
+                string q4 = "";
+
+                if (Question4 != null)
+                {
+                    foreach (var item in Question4)
+                    {
+                        q4 = Convert.ToString(item.Question);
+                        <p>@q4</p>
+                    }
+                }
+            }
+        </div>
+        <div class="survey">
+            <div>
+                <p class="radioAligenment">JA</p> <p class="radioAligenment">NEJ</p>
+                <br />
+                @Html.RadioButtonFor(model => model.ReplyB_4, true) <p style="display:inline;padding-right:25px;"></p>  @Html.RadioButtonFor(model => model.ReplyB_4, false)
+
+                @Html.ValidationMessageFor(model => model.ReplyB_4, "", new { @class = "text-danger" })
+            </div>
+        </div>
+    </div>
+    <hr />
+    <div class="form-group">
+        <div class="control-label col-md-2">
+            @{
+                var Question5 = db.Questions.Where(x => x.QuestionsID == 5);
+
+                string q5 = "";
+
+                if (Question5 != null)
+                {
+                    foreach (var item in Question5)
+                    {
+                        q5 = Convert.ToString(item.Question);
+                        <p>@q5</p>
+                    }
+                }
+            }
+        </div>
+        <div class="survey">
+            <div>
+                <p class="radioAligenment">JA</p> <p class="radioAligenment">NEJ</p>
+                <br />
+                @Html.RadioButtonFor(model => model.ReplyB_5, true) <p style="display:inline;padding-right:25px;"></p>  @Html.RadioButtonFor(model => model.ReplyB_5, false)
+
+                @Html.ValidationMessageFor(model => model.ReplyB_5, "", new { @class = "text-danger" })
+            </div>
+        </div>
+    </div>
+    <hr />
+    <div class="form-group">
+        <div class="control-label col-md-2">
+            @{
+                var Question6 = db.Questions.Where(x => x.QuestionsID == 6);
+
+                string q6 = "";
+
+                if (Question6 != null)
+                {
+                    foreach (var item in Question6)
+                    {
+                        q6 = Convert.ToString(item.Question);
+                        <p>@q6</p>
+                    }
+                }
+            }
+        </div>
+        <div class="survey">
+            <div>
+                <p class="radioAligenment">JA</p> <p class="radioAligenment">NEJ</p>
+                <br />
+                @Html.RadioButtonFor(model => model.ReplyB_6, true) <p style="display:inline;padding-right:25px;"></p>  @Html.RadioButtonFor(model => model.ReplyB_6, false)
+
+                @Html.ValidationMessageFor(model => model.ReplyB_6, "", new { @class = "text-danger" })
+            </div>
+        </div>
+    </div>
+    <hr />
+    <div class="form-group">
+        <div class="control-label col-md-2">
+            @{
+                var Question7 = db.Questions.Where(x => x.QuestionsID == 7);
+
+                string q7 = "";
+
+                if (Question7 != null)
+                {
+                    foreach (var item in Question7)
+                    {
+                        q7 = Convert.ToString(item.Question);
+                        <p>@q7</p>
+                    }
+                }
+            }
+        </div>
+        <div class="survey">
+            <div>
+                <p class="radioAligenment">JA</p> <p class="radioAligenment">NEJ</p>
+                <br />
+                @Html.RadioButtonFor(model => model.ReplyB_7, true) <p style="display:inline;padding-right:25px;"></p>  @Html.RadioButtonFor(model => model.ReplyB_7, false)
+
+                @Html.ValidationMessageFor(model => model.ReplyB_7, "", new { @class = "text-danger" })
+            </div>
+        </div>
+    </div>
+    <hr />
+    <div class="form-group">
+        <div class="control-label col-md-2">
+            @{
+                var Question8 = db.Questions.Where(x => x.QuestionsID == 8);
+
+                string q8 = "";
+
+                if (Question8 != null)
+                {
+                    foreach (var item in Question8)
+                    {
+                        q8 = Convert.ToString(item.Question);
+                        <p>@q8</p>
+                    }
+                }
+            }
+        </div>
+        <div class="survey">
+            <div>
+                <p class="radioAligenment">JA</p> <p class="radioAligenment">NEJ</p>
+                <br />
+                @Html.RadioButtonFor(model => model.ReplyB_8, true) <p style="display:inline;padding-right:25px;"></p>  @Html.RadioButtonFor(model => model.ReplyB_8, false)
+
+                @Html.ValidationMessageFor(model => model.ReplyB_8, "", new { @class = "text-danger" })
+            </div>
+        </div>
+    </div>
+    <hr />
+    <div class="form-group">
+        <div class="control-label col-md-2">
+            @{
+                var Question9 = db.Questions.Where(x => x.QuestionsID == 9);
+
+                string q9 = "";
+
+                if (Question9 != null)
+                {
+                    foreach (var item in Question9)
+                    {
+                        q9 = Convert.ToString(item.Question);
+                        <p>@q9</p>
+                    }
+                }
+            }
+        </div>
+        <div class="survey">
+            <div>
+                <p class="radioAligenment">JA</p> <p class="radioAligenment">NEJ</p>
+                <br />
+                @Html.RadioButtonFor(model => model.ReplyB_9, true) <p style="display:inline;padding-right:25px;"></p>  @Html.RadioButtonFor(model => model.ReplyB_9, false)
+
+                @Html.ValidationMessageFor(model => model.ReplyB_9, "", new { @class = "text-danger" })
+            </div>
+        </div>
+    </div>
+    <hr />
+    <div class="form-group">
+        <div class="control-label col-md-2">
+            @{
+                var Question10 = db.Questions.Where(x => x.QuestionsID == 10);
+
+                string q10 = "";
+
+                if (Question10 != null)
+                {
+                    foreach (var item in Question10)
+                    {
+                        q10 = Convert.ToString(item.Question);
+                        <p>@q10</p>
+                    }
+                }
+            }
+        </div>
+        <div class="survey">
+            <div>
+                <p class="radioAligenment">KVINDE</p> <p class="radioAligenment">MAND</p>
+                <br />
+              <p style="padding-left:10px;display:inline;"></p>  @Html.RadioButtonFor(model => model.ReplyB_10, true) <p style="display:inline;padding-right:60px;"></p>  @Html.RadioButtonFor(model => model.ReplyB_10, false)
+
+                @Html.ValidationMessageFor(model => model.ReplyB_10, "", new { @class = "text-danger" })
+            </div>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" value="indsend" class="btn btn-success" />
+        </div>
+       
+    </div>
+</div>
+}
+
+
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
+<style>
+    .survey {
+        margin-left: 50%;
+    }
+
+    .radioAligenment {
+        display: inline;
+        padding-right: 20px;
+    }
+
+    .radioAligenmentBtn {
+        padding-right: 2%;
+    }
+</style>
